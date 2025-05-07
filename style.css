@@ -316,13 +316,13 @@ h3 {
   left: 10px;
 }
 
-/* .slider-container .next {
-  right: 10px;
+.slider-container .next {
+  right: 0px;
 }
 
 .slider-btn.prev {
-  left: 10px;
-} */
+  left: 0px;
+}
 
 .slider-btn.next {
   right: 10px;
