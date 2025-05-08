@@ -306,26 +306,18 @@ h3 {
   border: none;
   color: rgb(0, 0, 0);
   font-size: 1rem;
-  /* padding: 0.3em 0.6em; */
+  font-family: San, sans-serif;
   cursor: pointer;
   user-select: none;
   z-index: 2;
 }
 
 .slider-container .prev {
-  left: 10px;
+  left: 0px;
 }
 
 .slider-container .next {
   right: 0px;
-}
-
-.slider-btn.prev {
-  left: 0px;
-}
-
-.slider-btn.next {
-  right: 10px;
 }
 
 .pr-image {
