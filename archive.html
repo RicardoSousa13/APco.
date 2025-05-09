@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <style>
+    /* ______________________AREA 51 */
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    .dark-mode .hdrLWF,
+    .dark-mode .hdrLWF div,
+    .dark-mode .hdrLWF summary,
+    .dark-mode .hdrLWF p,
+    .dark-mode .filtters select {
+      color: white;
+    }
+
+    .dark-mode .hdrLWF details {
+      border-bottom: 0.7px solid white;
+    }
+    .dark-mode .hdrLWF .type,
+    .dark-mode .hdrLWF .year,
+    .dark-mode .hdrLWF .state {
+      color: white;
+    }
+
+    .dark-mode .filters select {
+      color: white;
+      border-bottom: 1px solid white;
+    }
+
+    .dark-mode .filters select option {
+      background-color: black;
+      color: white;
+    }
+
+    /* ______________________AREA 51 */
+
     /* ---------- Layout ---------- */
     .project-list {
       padding-top: 7rem;
@@ -136,8 +172,8 @@
       </div>
       <a href="archive.html">Arquive</a>
       <a href="index.html">projects</a>
-      <a href="">info</a>
-      <a href="">[ mode ]</a>
+      <a href="about.html">info</a>
+      <button id="mode-toggle">[ mode ]</button>
     </div>
     <!-- END NAV -->
 
