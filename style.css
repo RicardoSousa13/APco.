@@ -196,9 +196,10 @@ a {
 }
 
 .position {
+  left: 0;
+  right: 0;
   position: fixed;
   bottom: 15px;
-  grid-template-columns: repeat(6, 1fr);
   margin-bottom: 0.8em;
   font-family: San, sans-serif;
   font-size: 0.8rem;
@@ -228,6 +229,7 @@ a {
 
 h1 {
   font-size: 1rem;
+  text-transform: initial;
 }
 
 h1:hover {
@@ -362,14 +364,13 @@ h3 {
   padding: 20rem 1rem 0 1rem;
 }
 
-.marca {
-  width: 200px;
+.f-contacto {
+  grid-column: span 2;
 }
 
-.position {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
+.marca {
+  grid-column: last;
+  width: 200px;
 }
 
 @media (max-width: 768px) {
@@ -392,6 +393,10 @@ h3 {
   h3 {
     grid-column: 1 / span 2;
     margin-bottom: 1.5em;
+  }
+
+  .position {
+    font-size: 0.8rem;
   }
   .grid-container {
     column-gap: 10px;
@@ -419,5 +424,15 @@ h3 {
 
   .pr-info-2 {
     margin-top: 1.3em;
+  }
+
+  .footer {
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 13px;
+    padding: 20rem 1rem 4rem 1rem;
+  }
+
+  .f-contacto {
+    grid-column: span 4;
   }
 }
