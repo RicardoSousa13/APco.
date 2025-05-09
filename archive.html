@@ -52,11 +52,12 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       color: black;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.5s ease;
     }
 
     .hdrLWF details:hover {
-      background-color: #ebebeb;
+      color: white;
+      background-color: blue;
     }
 
     .hdrLWF summary {
@@ -99,6 +100,29 @@
       max-width: 40%;
       height: auto;
       margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .hdrLWF {
+        padding: 0.5rem;
+      }
+      .hdrLWF details,
+      .filters select {
+        font-size: 0.7rem;
+      }
+      .archive-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 13px;
+      }
+      .location,
+      .state {
+        display: none;
+      }
+
+      .archive-grid > :first-child {
+        grid-column: span 3;
+      }
     }
   </style>
   <body>
@@ -154,9 +178,9 @@
         class="project"
       >
         <summary class="sections archive-grid">
-          <div>Albergaria_casa do Outeiro</div>
+          <div class="ar-title">Albergaria_casa do Outeiro</div>
           <div class="type">Social Housing</div>
-          <div>Porto, PT</div>
+          <div class="location">Porto, PT</div>
           <div class="year">2025001</div>
           <div class="state">complete</div>
         </summary>
