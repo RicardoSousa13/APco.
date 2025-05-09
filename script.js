@@ -1,5 +1,5 @@
 const customCursor = document.querySelector(".custom-cursor");
-const links = document.querySelectorAll("a");
+const links = document.querySelectorAll("a, button");
 
 links.forEach((link) => {
   link.addEventListener("mouseenter", () => {
@@ -14,6 +14,12 @@ links.forEach((link) => {
 document.addEventListener("mousemove", (e) => {
   customCursor.style.left = `${e.clientX}px`;
   customCursor.style.top = `${e.clientY}px`;
+});
+
+const modeToggle = document.getElementById("mode-toggle");
+
+modeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 });
 
 //SLider
