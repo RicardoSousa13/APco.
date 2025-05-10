@@ -138,14 +138,25 @@ table {
 }
 
 @font-face {
+  font-family: Sa2;
+  src: url("fonts/ABCMonumentGrotesk-Medium-Trial.otf");
+}
+
+@font-face {
   font-family: Sf;
   src: url("fonts/JMTF_PondreLight.otf");
+}
+
+::selection {
+  background-color: blue;
+  color: white;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
+  background-color: #e6e6e5;
   max-width: 4000px;
   margin: 0 auto;
   font-family: San, sans-serif;

@@ -1,5 +1,5 @@
 const customCursor = document.querySelector(".custom-cursor");
-const links = document.querySelectorAll("a, button");
+const links = document.querySelectorAll("a, button, summary");
 
 links.forEach((link) => {
   link.addEventListener("mouseenter", () => {
