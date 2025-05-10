@@ -6,6 +6,68 @@
     <title>APco. - test</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
+  <style>
+    .bio-entrance {
+      padding-top: 13em;
+      margin-bottom: -1.3em;
+    }
+    .bio-entrance p {
+      grid-column: span 5;
+    }
+    .profile-picture {
+      max-width: 100%;
+      height: auto;
+      grid-column: 1 / span 3;
+    }
+
+    .bio {
+      position: sticky;
+      display: block;
+      padding-top: 2em;
+      top: 0;
+      padding-bottom: 2em;
+      /* margin-top: 290px; */
+    }
+
+    .bio-text {
+      text-indent: 14.9em;
+      font-size: 1.5rem;
+      grid-column: 1 / span 10;
+      line-height: 1.7rem;
+      letter-spacing: -0.001rem;
+      font-family: Sa2, sans-serif;
+    }
+
+    strong {
+      color: blue;
+    }
+
+    .services {
+      position: sticky;
+      height: 0;
+      padding-top: 2em;
+      top: 4em;
+      padding-bottom: 6em;
+    }
+    .studio {
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
+    .studio-picture {
+      grid-column: 4 / span 6;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .colophon {
+      padding-top: 7em;
+    }
+    .colophon p {
+      grid-column: span 3;
+    }
+  </style>
+
   <body>
     <div class="custom-cursor"></div>
     <!-- NAV -->
@@ -17,8 +79,140 @@
       </div>
       <a href="archive.html">Arquive</a>
       <a href="index.html">projects</a>
-      <a href="">info</a>
-      <a href="">[ mode ]</a>
+      <a href="about.html">info</a>
+      <button id="mode-toggle">[ mode ]</button>
     </div>
+    <!-- NAV -->
+
+    <div class="grid-container bio-entrance">
+      <img
+        class="profile-picture"
+        src="images/profile.png"
+        alt="profile picture"
+      />
+      <p>
+        E<a href="">&emsp;&emsp;info @albuquerquepinho.com</a><br />
+        T&emsp;&emsp;(+351) 912 244 944 <br />
+        M&emsp;&emsp;Rua de Sá da Bandeira 651, 4ºGab. 8,<br />
+        &emsp;&emsp;&emsp;4050-453 Porto, Portugal <br /><br />
+        IG <a href=""> &emsp;&emsp;@albuquerquepinho</a><br />
+        LI <a href=""> &emsp;&emsp;@albuquerquepinho</a><br />
+        <span class="bio"
+          >Luís Albuquerque Pinho<br />Architect, Curator, and Researcher</span
+        >
+      </p>
+    </div>
+
+    <div class="grid-container">
+      <p class="bio-text">
+        Luís Albuquerque Pinho is a Portuguese architect and curator, born in
+        Porto in 1978. He obtained his degree in Architecture from Universidade
+        Lusíada do Porto in 2001. Between 2000 and 2011, he collaborated with
+        architects Isabel Furtado and João Pedro Serôdio. From 2001 to 2019, he
+        was associate architect at Garcia e Albuquerque. <br />Expanding his
+        expertise into the fields of art and curation Luis Albuquerque Pinho
+        enrolled postgraduate studies in Art Studies — Museum and Curatorial
+        Studies at the Faculty of Fine Arts, University of Porto (FBAUP). In
+        2011, he was a resident curator at the Node Center for Curatorial
+        Studies in Berlin and participated in the Independent Study Programme at
+        Escola Maumaus in Lisbon. <br />Since 2011, he has developed independent
+        curatorial and research projects in collaboration with Luís Pinto Nunes.
+        Notably, they co-edited the publication PARQUE — Conjunto Habitacional
+        Luso-Lima 1958—2023, contributing to the documentation of this
+        architectural heritage.<br />
+        In 2021, Luis Albuquerque Pinho was appointed as a jury member for the
+        SHUTTLE grants, a program by Porto City Hall (Pláka) supporting the
+        internationalisation of artistic practices. Since 2020, he leads his own
+        practice, <strong>Albuquerque Pinho and Co</strong>, focusing on
+        architecture and consulting, with an emphasis on sustainability and the
+        integration of traditional construction methods.
+      </p>
+    </div>
+    <div class="grid-container studio">
+      <img
+        class="studio-picture"
+        src="images/office.png"
+        alt="studio picture"
+      />
+      <p class="services">
+        SERVICES<br /><br />
+        → Arquitecture<br />
+        → Design<br />
+        → Curation<br />
+      </p>
+    </div>
+    <div class="grid-container bio-text">
+      <p class="bio-text">
+        <strong>Albuquerque Pinho and Co</strong> is a collaborative
+        architecture and design studio founded in 2020 by Luís Albuquerque
+        Pinho. Based in Porto, the studio works across the fields of
+        architecture, object design, wellbeing, critical thinking, and
+        aesthetics, performing nationally and internationally. Its
+        multidisciplinary practice embraces design as a cultural and ethical act
+        — shaping not only the physical space, but also the relational spheres
+        and ecological landscapes.<br />
+
+        With a primary focus on housing, public cultural buildings and urban
+        planning, the studio’s work is guided by a strong ethos of generosity
+        and economy. Each project aspires to serve life and community, foster
+        use and appropriation, challenging the conventional norms through
+        precise yet open-ended design strategies, placing the principles of
+        sustainability at the core if its designs and philosophy. Through the
+        selection of materials, construction methods, and energy use, the
+        studio’s work reflects a commitment to architecture’s role in shaping
+        climate-conscious and regenerative futures.<br />
+
+        Projects such as the renovation of office spaces for Porto City Hall,
+        private residencies, and a housing complex in Albergaria-a-Velha
+        illustrate the studio’s commitment to socially engaged and
+        environmentally responsible architecture. More recently, the practice
+        has focused on renovation and adaptive reuse of heritage houses –
+        including the Casa do Morgadio de Santo Antão das Presas and Casa do
+        Outeiro – highlighting a growing interest in preserving cultural memory
+        through contemporary design strategies. The preservation of cultural
+        heritage also reflects on the studio’s respect for traditional
+        construction methods and craft, reinterpreting vernacular techniques and
+        using local materials and labor, building for the future in dialogue
+        with the past.<br />
+
+        Besides architectural work, the studio offers consulting in construction
+        processes, notably for projects such as a residence in the Cologny in
+        Geneva and the Whitley Park Estate in London, providing technical and
+        conceptual guidance in international contexts.<br />
+
+        Beyond architectural practice, Albuquerque Pinho and Co embraces an
+        expanded practice, collaborating across disciplines and media, with
+        projects for exhibition displays for Galeria Vertical at Silo-Auto in
+        Porto (2016), a public installation for the 20th anniversary of Porto’s
+        as a UNESCO World Heritage Site (2016), and also collaborated with the
+        Portuguese artist Carla Filipe on a project for a garden installation
+        for the Ping Yao Sculpture Park in China (2019). These projects reflect
+        the studio’s commitment to cultural engagement and experimentation,
+        pushing architecture’s boundaries into art, public space, and collective
+        memory.<br /><br />
+        <strong
+          >Albuquerque Pinho and Co continues to evolve as a critical and
+          creative platform, committed to developing architectural practices
+          that are not only intellectually and socially rigorous, but also
+          deeply responsive to the environmental challenges of our time.</strong
+        >
+      </p>
+    </div>
+    <div class="grid-container colophon">
+      <p>
+        Built with sustainable code, following W3C standards.<br />
+        Dark mode helps save energy.
+      </p>
+      <p>
+        Design & Developmen<br />
+        Ricardo Sousa<br /><br />
+        Fonts<br />
+        San, Sf<br /><br />
+      </p>
+      <p>© AP Co., All rights reserved</p>
+
+      <img class="marca" src="images/logo.svg" alt="logo" />
+    </div>
+    <script src="script.js" defer></script>
   </body>
 </html>
