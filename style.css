@@ -166,8 +166,8 @@ html {
 
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   background-color: blue;
   border-radius: 50%;
   pointer-events: none;
@@ -276,7 +276,7 @@ a {
 }
 .nav-container a:hover {
   color: blue;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.03rem;
 }
 
 /* #menu {
@@ -417,8 +417,13 @@ h3 {
     display: none;
   }
 
-  h1 {
-    font-size: 0.9rem;
+  #logo-animation {
+    grid-column: span 2;
+    align-self: center;
+    width: 150px;
+  }
+  #mode-toggle {
+    display: none;
   }
 
   p,
