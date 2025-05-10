@@ -147,6 +147,11 @@ table {
   src: url("fonts/JMTF_PondreLight.otf");
 }
 
+::selection {
+  background-color: blue;
+  color: white;
+}
+
 body,
 html {
   margin: 0;
