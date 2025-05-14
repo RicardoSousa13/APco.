@@ -91,9 +91,13 @@
       transition: 0.3s ease;
     }
 
-    .hdrLWF details:hover {
+    summary {
+      transition: 0.3s ease;
+    }
+
+    summary:hover {
       color: blue;
-      letter-spacing: 0.03rem;
+      letter-spacing: 0.01rem;
     }
 
     .hdrLWF summary {
@@ -125,17 +129,18 @@
       line-height: 1rem;
       font-size: 0.75rem;
       text-transform: none;
+      padding-bottom: 1em;
     }
 
-    .project-content p,
-    .project-content img {
+    .project-content p {
       grid-column: 3 / span 4; /* Start at column 2, span the rest */
     }
 
     .project-content img {
-      max-width: 40%;
+      grid-column: span 2;
+      max-width: 100%;
       height: auto;
-      margin-top: 0.5rem;
+      /* margin-top: 0.5rem; */
     }
 
     @media (max-width: 768px) {
@@ -159,23 +164,29 @@
       .archive-grid > :first-child {
         grid-column: span 3;
       }
+
+      .project-content p {
+        grid-column: 1 / span 5;
+      }
+      .project-content img {
+        grid-column: span 6;
+        max-width: 100%;
+        height: auto;
+        scroll-margin-bottom: 0.5rem;
+      }
     }
   </style>
   <body>
     <div class="custom-cursor"></div>
     <!-- NAV -->
     <div class="sections grid-container nav-container">
-      <div class="logo">
-        <a href="" style="text-decoration: none"
-          ><h1>AP <span style="font-family: Sf">Co.</span></h1></a
-        >
-      </div>
+      <div class="logo" id="logo-animation"></div>
       <a href="archive.html">Arquive</a>
       <a href="index.html">projects</a>
       <a href="about.html">info</a>
       <button id="mode-toggle">[ mode ]</button>
     </div>
-    <!-- END NAV -->
+    <!-- NAV -->
 
     <section class="project-list grid-container">
       <div class="filters">
@@ -221,13 +232,13 @@
           <div class="state">complete</div>
         </summary>
         <div class="project-content">
+          <img src="images/001.jpg" alt="Armistice Project" />
           <p>
             Arquitetos: Services United <br />
             Client: Anne Isabella <br />
             Area: 1045m2<br />
             Photography: Daniella Maiorano <br />
           </p>
-          <img src="images/001.jpg" alt="Armistice Project" />
         </div>
       </details>
       <!-- XXX -->
@@ -320,6 +331,55 @@
 
       // Optional: run once on page load
       filterProjects();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script>
+      const logoContainer = document.getElementById("logo-animation");
+
+      const logoAnimation = lottie.loadAnimation({
+        container: logoContainer,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "images/Scene-1.json", // Adjust path if needed
+      });
+
+      // Start in compressed state
+      logoAnimation.addEventListener("DOMLoaded", () => {
+        logoAnimation.goToAndStop(logoAnimation.totalFrames, true);
+      });
+
+      // Hover animation
+      logoContainer.addEventListener("mouseenter", () => {
+        logoAnimation.setDirection(-1); // expand
+        logoAnimation.play();
+      });
+
+      logoContainer.addEventListener("mouseleave", () => {
+        logoAnimation.setDirection(1); // compress
+        logoAnimation.play();
+      });
+
+      // Scroll animation
+      let lastScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScrollTop < lastScrollTop) {
+          // Scroll up → expand
+          logoAnimation.setDirection(-1);
+          logoAnimation.play();
+        } else if (currentScrollTop > lastScrollTop) {
+          // Scroll down → compress
+          logoAnimation.setDirection(1);
+          logoAnimation.play();
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+      });
     </script>
   </body>
 </html>
