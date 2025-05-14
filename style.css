@@ -166,8 +166,8 @@ html {
 
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   background-color: blue;
   border-radius: 50%;
   pointer-events: none;
@@ -260,21 +260,10 @@ a {
   z-index: 90;
 }
 
-.logo {
-  font-family: San, sans-serif;
-  color: #000;
-  font-size: 1.3em;
-  transition: 0.3s ease;
+#logo-animation {
   grid-column: span 8;
-}
-
-h1 {
-  font-size: 1rem;
-  text-transform: initial;
-}
-
-h1:hover {
-  color: blue;
+  align-self: center;
+  width: 180px;
 }
 .nav-container a {
   font-family: San, sans-serif;
@@ -283,10 +272,11 @@ h1:hover {
   color: #000;
   transition: 0.3s ease;
   text-transform: uppercase;
+  align-content: center;
 }
 .nav-container a:hover {
   color: blue;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.03rem;
 }
 
 /* #menu {
@@ -428,8 +418,13 @@ h3 {
     display: none;
   }
 
-  h1 {
-    font-size: 0.9rem;
+  #logo-animation {
+    grid-column: span 2;
+    align-self: center;
+    width: 150px;
+  }
+  #mode-toggle {
+    display: none;
   }
 
   p,
