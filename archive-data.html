@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APco. - Archive test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    /* ______________________AREA 51 */
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    .dark-mode .hdrLWF,
+    .dark-mode .hdrLWF div,
+    .dark-mode .hdrLWF summary,
+    .dark-mode .hdrLWF p,
+    .dark-mode .filtters select {
+      color: white;
+    }
+
+    .dark-mode .hdrLWF details {
+      border-bottom: 0.7px solid white;
+    }
+    .dark-mode .hdrLWF .type,
+    .dark-mode .hdrLWF .year,
+    .dark-mode .hdrLWF .state {
+      color: white;
+    }
+
+    .dark-mode .filters select {
+      color: white;
+      border-bottom: 1px solid white;
+    }
+
+    .dark-mode .filters select option {
+      background-color: black;
+      color: white;
+    }
+
+    /* ______________________AREA 51 */
+
+    /* ---------- Layout ---------- */
+    .project-list {
+      padding-top: 13em;
+    }
+
+    .hdrLWF {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      font-family: San, sans-serif;
+    }
+
+    /* ---------- Filters ---------- */
+    .filters {
+      display: flex;
+      gap: 1em;
+      grid-column: 1 / -1;
+      margin-bottom: 1em;
+      font-size: 0.8rem;
+    }
+
+    .filters select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid black;
+      border-radius: 0;
+      font-family: inherit;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      padding: 0.3rem 0;
+      color: black;
+      cursor: pointer;
+    }
+
+    /* ---------- Archive Items ---------- */
+    .hdrLWF details {
+      border-bottom: 0.7px solid black;
+      padding: 0.3rem 0;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: black;
+      transition: 0.3s ease;
+    }
+
+    summary {
+      transition: 0.3s ease;
+    }
+
+    summary:hover {
+      color: blue;
+      letter-spacing: 0.01rem;
+    }
+
+    .hdrLWF summary {
+      cursor: none;
+      list-style: none;
+    }
+
+    .hdrLWF summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    .archive-grid > :first-child {
+      grid-column: span 2;
+    }
+
+    /* ---------- Expanded Content ---------- */
+
+    .project-content {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      margin-top: 1rem;
+      line-height: 1rem;
+      font-size: 0.75rem;
+      text-transform: none;
+      padding-bottom: 1em;
+    }
+
+    .project-content p {
+      grid-column: 3 / span 4; /* Start at column 2, span the rest */
+    }
+
+    .project-content img {
+      grid-column: span 2;
+      max-width: 100%;
+      height: auto;
+      /* margin-top: 0.5rem; */
+    }
+
+    @media (max-width: 720px) {
+      .archive-grid .collaboration,
+      .archive-grid .type,
+      .archive-grid .location {
+        display: none;
+      }
+    }
+  </style>
+  <body>
+    <div class="custom-cursor"></div>
+    <!-- NAV -->
+    <div class="sections grid-container nav-container">
+      <div class="logo" id="logo-animation"></div>
+      <a href="archive.html">Arquive</a>
+      <a href="index.html">projects</a>
+      <a href="about.html">info</a>
+      <button id="mode-toggle">[ mode ]</button>
+    </div>
+    <!-- NAV -->
+    <section class="project-list grid-container">
+      <div class="filters">
+        <select id="filter-collaboration">
+          <option value="all">All Collaborations</option>
+        </select>
+
+        <select id="filter-location">
+          <option value="all">All Locations</option>
+        </select>
+
+        <select id="filter-type">
+          <option value="all">All Categories</option>
+        </select>
+
+        <select id="filter-year">
+          <option value="all">All Years</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="hdrLWF"></div>
+
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+    <!-- Add this if not already there -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  </body>
+</html>
