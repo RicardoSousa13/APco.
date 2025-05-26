@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APco. - Archive test</title>
+    <title>APco. - Home Test</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <style>
+    #logo-animation {
+      align-self: center;
+      width: 1000px;
+    }
     /* ______________________AREA 51 */
 
     .dark-mode {
@@ -178,9 +182,10 @@
   </style>
   <body>
     <div class="custom-cursor"></div>
+    <div class="logo-home" id="logo-animation"></div>
     <!-- NAV -->
     <div class="sections grid-container nav-container">
-      <div class="logo" id="logo-animation"></div>
+      <div></div>
       <a href="archive.html">Arquive</a>
       <a href="index.html">projects</a>
       <a href="about.html">info</a>
@@ -295,6 +300,91 @@
     </div>
 
     <script src="script.js" defer></script>
+
+    <script>
+      const typeFilter = document.getElementById("filter-type");
+      const yearFilter = document.getElementById("filter-year");
+      const stateFilter = document.getElementById("stateFilter");
+      const projects = document.querySelectorAll(".hdrLWF details");
+
+      function filterProjects() {
+        const selectedType = typeFilter.value.toLowerCase();
+        const selectedYear = yearFilter.value;
+        const selectedState = stateFilter.value.toLowerCase();
+
+        projects.forEach((project) => {
+          const type = project.dataset.type?.toLowerCase();
+          const year = project.dataset.year;
+          const state = project.dataset.state?.toLowerCase();
+
+          const matchesType = selectedType === "all" || type === selectedType;
+          const matchesYear = selectedYear === "all" || year === selectedYear;
+          const matchesState = !selectedState || state === selectedState;
+
+          if (matchesType && matchesYear && matchesState) {
+            project.style.display = "block";
+          } else {
+            project.style.display = "none";
+          }
+        });
+      }
+
+      // Attach listeners
+      typeFilter.addEventListener("change", filterProjects);
+      yearFilter.addEventListener("change", filterProjects);
+      stateFilter.addEventListener("change", filterProjects);
+
+      // Optional: run once on page load
+      filterProjects();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script>
+      const logoContainer = document.getElementById("logo-animation");
+
+      const logoAnimation = lottie.loadAnimation({
+        container: logoContainer,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "images/Scene-1.json", // Adjust path if needed
+      });
+
+      // Start in compressed state
+      logoAnimation.addEventListener("DOMLoaded", () => {
+        logoAnimation.goToAndStop(logoAnimation.totalFrames, true);
+      });
+
+      // Hover animation
+      logoContainer.addEventListener("mouseenter", () => {
+        logoAnimation.setDirection(-1); // expand
+        logoAnimation.play();
+      });
+
+      logoContainer.addEventListener("mouseleave", () => {
+        logoAnimation.setDirection(1); // compress
+        logoAnimation.play();
+      });
+
+      // Scroll animation
+      let lastScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScrollTop < lastScrollTop) {
+          // Scroll up → expand
+          logoAnimation.setDirection(-1);
+          logoAnimation.play();
+        } else if (currentScrollTop > lastScrollTop) {
+          // Scroll down → compress
+          logoAnimation.setDirection(1);
+          logoAnimation.play();
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+      });
+    </script>
   </body>
 </html>

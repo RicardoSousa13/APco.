@@ -226,53 +226,5 @@
     </div>
     <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <script>
-      const logoContainer = document.getElementById("logo-animation");
-
-      const logoAnimation = lottie.loadAnimation({
-        container: logoContainer,
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
-        path: "images/Scene-1.json", // Adjust path if needed
-      });
-
-      // Start in compressed state
-      logoAnimation.addEventListener("DOMLoaded", () => {
-        logoAnimation.goToAndStop(logoAnimation.totalFrames, true);
-      });
-
-      // Hover animation
-      logoContainer.addEventListener("mouseenter", () => {
-        logoAnimation.setDirection(-1); // expand
-        logoAnimation.play();
-      });
-
-      logoContainer.addEventListener("mouseleave", () => {
-        logoAnimation.setDirection(1); // compress
-        logoAnimation.play();
-      });
-
-      // Scroll animation
-      let lastScrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      window.addEventListener("scroll", () => {
-        const currentScrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
-
-        if (currentScrollTop < lastScrollTop) {
-          // Scroll up → expand
-          logoAnimation.setDirection(-1);
-          logoAnimation.play();
-        } else if (currentScrollTop > lastScrollTop) {
-          // Scroll down → compress
-          logoAnimation.setDirection(1);
-          logoAnimation.play();
-        }
-
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-      });
-    </script>
   </body>
 </html>
