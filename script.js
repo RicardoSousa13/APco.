@@ -1,3 +1,4 @@
+// ----------- Custom Cursor -----------
 const customCursor = document.querySelector(".custom-cursor");
 const links = document.querySelectorAll("a, button, summary");
 
@@ -16,13 +17,86 @@ document.addEventListener("mousemove", (e) => {
   customCursor.style.top = `${e.clientY}px`;
 });
 
-const modeToggle = document.getElementById("mode-toggle");
+// ----------- Hamburguer -----------
 
-modeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+document
+  .getElementById("mobile-menu-toggle")
+  .addEventListener("click", function () {
+    document.getElementById("mobile-menu").style.display = "flex";
+  });
+
+document.querySelector(".menu-close").addEventListener("click", function () {
+  document.getElementById("mobile-menu").style.display = "none";
 });
 
-//SLider
+// ----------- Dark Mode Toggle -----------
+const modeToggle = document.getElementById("mode-toggle");
+
+modeToggle?.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  updateLogoColor();
+});
+
+// ----------- Lottie Logo Animation -----------
+const logoContainer = document.getElementById("logo-animation");
+let logoAnimation;
+
+if (logoContainer) {
+  logoAnimation = lottie.loadAnimation({
+    container: logoContainer,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "images/Scene-1.json",
+  });
+
+  logoAnimation.addEventListener("DOMLoaded", () => {
+    logoAnimation.goToAndStop(logoAnimation.totalFrames, true);
+    updateLogoColor();
+  });
+
+  logoContainer.addEventListener("mouseenter", () => {
+    logoAnimation.setDirection(-1);
+    logoAnimation.play();
+  });
+
+  logoContainer.addEventListener("mouseleave", () => {
+    logoAnimation.setDirection(1);
+    logoAnimation.play();
+  });
+
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop < lastScrollTop) {
+      logoAnimation.setDirection(-1);
+      logoAnimation.play();
+    } else if (currentScrollTop > lastScrollTop) {
+      logoAnimation.setDirection(1);
+      logoAnimation.play();
+    }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+  });
+}
+
+function updateLogoColor() {
+  setTimeout(() => {
+    const svgPaths = logoContainer?.getElementsByTagName("path") || [];
+    const newColor = document.body.classList.contains("dark-mode")
+      ? "white"
+      : "black";
+
+    for (let i = 0; i < svgPaths.length; i++) {
+      svgPaths[i].setAttribute("fill", newColor);
+    }
+  }, 100);
+}
+
+// ----------- Slider -----------
 document.addEventListener("DOMContentLoaded", function () {
   const sliderContainers = document.querySelectorAll(".slider-container");
 
@@ -41,23 +115,52 @@ document.addEventListener("DOMContentLoaded", function () {
         images[index].classList.add("active");
       }
 
-      nextBtn.addEventListener("click", (e) => {
+      nextBtn?.addEventListener("click", (e) => {
         e.stopPropagation();
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
       });
 
-      prevBtn.addEventListener("click", (e) => {
+      prevBtn?.addEventListener("click", (e) => {
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         showImage(currentIndex);
       });
 
-      // Optional: click on image also goes forward
-      slider.addEventListener("click", () => {
+      slider?.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
       });
     }
   });
 });
+
+// ----------- Filters (Archive Page) -----------
+const typeFilter = document.getElementById("filter-type");
+const yearFilter = document.getElementById("filter-year");
+const stateFilter = document.getElementById("stateFilter");
+const projects = document.querySelectorAll(".hdrLWF details");
+
+function filterProjects() {
+  const selectedType = typeFilter?.value.toLowerCase() || "";
+  const selectedYear = yearFilter?.value || "";
+  const selectedState = stateFilter?.value.toLowerCase() || "";
+
+  projects.forEach((project) => {
+    const type = project.dataset.type?.toLowerCase() || "";
+    const year = project.dataset.year || "";
+    const state = project.dataset.state?.toLowerCase() || "";
+
+    const matchesType = selectedType === "all" || type === selectedType;
+    const matchesYear = selectedYear === "all" || year === selectedYear;
+    const matchesState = !selectedState || state === selectedState;
+
+    project.style.display =
+      matchesType && matchesYear && matchesState ? "block" : "none";
+  });
+}
+
+typeFilter?.addEventListener("change", filterProjects);
+yearFilter?.addEventListener("change", filterProjects);
+stateFilter?.addEventListener("change", filterProjects);
+filterProjects(); // Run once on load

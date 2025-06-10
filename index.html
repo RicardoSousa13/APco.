@@ -1,230 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APco.</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- SEO -->
+    <title>APco. - Coming Soon</title>
+    <meta
+      name="description"
+      content="Architecture and research practice based in Porto, Portugal. Projects, archive, and studio information."
+    />
+    <meta name="author" content="Ricardo Sousa" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/head/favicon.ico" type="image/x-icon" />
+    <!--  Styles -->
     <link rel="stylesheet" href="style.css" />
+    <!-- 
+■
+ricardo sousa  
+Design de Comunicação / Communication Design  
+
++351 932 556 706  
+https://erre.kickvoidloop.com/ricardo  
+-->
   </head>
   <body>
     <div class="custom-cursor"></div>
+
+    <!-- Fullscreen overlay (initially hidden) -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="menu-header">
+        <div class="menu-logo"><strong>Albuquerque Pinho</strong> co.</div>
+        <button class="menu-close">CLOSE</button>
+      </div>
+
+      <nav class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Archive</a>
+        <a href="about.html">Studio</a>
+      </nav>
+
+      <div class="mobile-contact">
+        <p><strong>E</strong> info@albuquerquepinho.com</p>
+        <p><strong>W</strong> (+351) 912 244 944</p>
+      </div>
+    </div>
+
     <!-- NAV -->
-    <div class="sections grid-container nav-container">
-      <div class="logo" id="logo-animation"></div>
+    <div id="landing" class="sections grid-container nav-container">
+      <div class="logoLanding" id="logo-animation"></div>
+      <p class="landingParagraph">
+        Albuquerque Pinho and Co is a collaborative studio working across the
+        fields of <br />architecture, object design, wellbeing, critical
+        thinking, and aesthetics.
+      </p>
       <a href="archive.html">Arquive</a>
-      <a href="index.html">projects</a>
-      <a href="about.html">info</a>
-      <button id="mode-toggle">[ mode ]</button>
+      <a href="about.html">studio</a>
+      <button id="mode-toggle">#000000</button>
+      <button id="mobile-menu-toggle">MENU</button>
     </div>
     <!-- NAV -->
-
-    <div class="sections grid-container position">
-      <p class="f-contacto">
-        <a href="">E &nbsp;luisalbiquerque@gmail.com</a>
-        <br />T&nbsp;[+351]912244944
-      </p>
-      <p class="f-morada" style="grid-column: span 3">
-        M Rua de Sá da Bandeira 651, 4ºGab. 8,<br />
-        4050-453 Porto, Portugal
-      </p>
-    </div>
-    <!-- NAV -->
-
-    <!-- PROJECT 01 -->
-    <section class="sections projects">
-      <div class="grid-container title">
-        <p class="pr-var">[VAR 000]</p>
-        <h3>EDIFÍCIO TUPAEL</h3>
-        <p>[13004]</p>
-      </div>
-      <div class="grid-container">
-        <div class="pr-info">
-          <p>Pequena descrição ou indicação do projetoxs</p>
-        </div>
-        <div class="pr-image">
-          <div class="slider-container">
-            <button class="prev">&#8592;</button>
-            <div class="slider">
-              <img src="images/001.jpg" class="active" />
-              <img src="images/002.JPG" />
-              <img src="images/003.JPG" />
-            </div>
-            <button class="next">&#8594;</button>
-          </div>
-        </div>
-
-        <!-- <div class="pr-image"><img src="images/001.jpg" /></div> -->
-        <div class="pr-info-2">
-          <p class="tag-line">cliente <span>Client</span></p>
-          <h5>Nome Cliente</h5>
-          <!-- // -->
-          <p class="tag-line">local</p>
-          <h5>Oscar Leite e Elsa Pereira</h5>
-          <!-- // -->
-          <p class="tag-line">colaboração <span>colaboration</span></p>
-          <h6>Sara Ribeiro</h6>
-          <!-- // -->
-          <p class="tag-line">fotografia <span>photography</span></p>
-          <h6>Jorge Garcia Pereira</h6>
-          <!-- // -->
-          <p class="tag-line">área</p>
-          <h6>1200 m2</h6>
-          <!-- // -->
-          <p class="tag-line">programa <span>photography</span></p>
-          <h6>Habitação multifamiliar</h6>
-          <!-- // -->
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT 02 -->
-    <section class="sections projects">
-      <div class="grid-container title">
-        <p>[VAR 000]</p>
-        <h3>EDIFÍCIO TUPAEL</h3>
-        <p>[13004]</p>
-      </div>
-      <div class="grid-container">
-        <div class="pr-info">
-          <p>Pequena descrição ou indicação do projetoxs</p>
-        </div>
-        <div class="pr-image">
-          <div class="slider-container">
-            <button class="prev">&#8592;</button>
-            <div class="slider">
-              <img src="images/002.JPG" class="active" />
-              <img src="images/001.jpg" />
-              <img src="images/003.JPG" />
-            </div>
-            <button class="next">&#8594;</button>
-          </div>
-        </div>
-
-        <!-- <div class="pr-image"><img src="images/001.jpg" /></div> -->
-        <div class="pr-info-2">
-          <p class="tag-line">cliente <span>Client</span></p>
-          <h5>Nome Cliente</h5>
-          <!-- // -->
-          <p class="tag-line">local</p>
-          <h5>Oscar Leite e Elsa Pereira</h5>
-          <!-- // -->
-          <p class="tag-line">colaboração <span>colaboration</span></p>
-          <h6>Sara Ribeiro</h6>
-          <!-- // -->
-          <p class="tag-line">fotografia <span>photography</span></p>
-          <h6>Jorge Garcia Pereira</h6>
-          <!-- // -->
-          <p class="tag-line">área</p>
-          <h6>1200 m2</h6>
-          <!-- // -->
-          <p class="tag-line">programa <span>photography</span></p>
-          <h6>Habitação multifamiliar</h6>
-          <!-- // -->
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT 03 -->
-    <section class="sections projects">
-      <div class="grid-container title">
-        <p>[VAR 000]</p>
-        <h3>EDIFÍCIO TUPAEL</h3>
-        <p>[13004]</p>
-      </div>
-      <div class="grid-container">
-        <div class="pr-info">
-          <p>Pequena descrição ou indicação do projetoxs</p>
-        </div>
-        <div class="pr-image">
-          <div class="slider-container">
-            <button class="prev">&#8592;</button>
-            <div class="slider">
-              <img src="images/003.JPG" class="active" />
-              <img src="images/002.JPG" />
-              <img src="images/001.jpg" />
-            </div>
-            <button class="next">&#8594;</button>
-          </div>
-        </div>
-
-        <!-- <div class="pr-image"><img src="images/001.jpg" /></div> -->
-        <div class="pr-info-2">
-          <p class="tag-line">cliente <span>Client</span></p>
-          <h5>Nome Cliente</h5>
-          <!-- // -->
-          <p class="tag-line">local</p>
-          <h5>Oscar Leite e Elsa Pereira</h5>
-          <!-- // -->
-          <p class="tag-line">colaboração <span>colaboration</span></p>
-          <h6>Sara Ribeiro</h6>
-          <!-- // -->
-          <p class="tag-line">fotografia <span>photography</span></p>
-          <h6>Jorge Garcia Pereira</h6>
-          <!-- // -->
-          <p class="tag-line">área</p>
-          <h6>1200 m2</h6>
-          <!-- // -->
-          <p class="tag-line">programa <span>photography</span></p>
-          <h6>Habitação multifamiliar</h6>
-          <!-- // -->
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <img class="marca" src="images/logo.svg" alt="logo" />
-    </div>
-
     <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <script>
-      const logoContainer = document.getElementById("logo-animation");
-
-      const logoAnimation = lottie.loadAnimation({
-        container: logoContainer,
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
-        path: "images/Scene-1.json", // Adjust path if needed
-      });
-
-      // Start in compressed state
-      logoAnimation.addEventListener("DOMLoaded", () => {
-        logoAnimation.goToAndStop(logoAnimation.totalFrames, true);
-      });
-
-      // Hover animation
-      logoContainer.addEventListener("mouseenter", () => {
-        logoAnimation.setDirection(-1); // expand
-        logoAnimation.play();
-      });
-
-      logoContainer.addEventListener("mouseleave", () => {
-        logoAnimation.setDirection(1); // compress
-        logoAnimation.play();
-      });
-
-      // Scroll animation
-      let lastScrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      window.addEventListener("scroll", () => {
-        const currentScrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
-
-        if (currentScrollTop < lastScrollTop) {
-          // Scroll up → expand
-          logoAnimation.setDirection(-1);
-          logoAnimation.play();
-        } else if (currentScrollTop > lastScrollTop) {
-          // Scroll down → compress
-          logoAnimation.setDirection(1);
-          logoAnimation.play();
-        }
-
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-      });
-    </script>
   </body>
 </html>

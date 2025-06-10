@@ -1,0 +1,18 @@
+[
+  {
+    "title": "MAJOR",
+    "collaboration": "Atelier XYZ",
+    "location": "BE, Brussels",
+    "type": "Social Housing",
+    "year": "2024",
+    "image": "images/002.JPG",
+    "description": "Client: City of Brussels<br>Area: 1,500m²"
+  },
+  {
+    "title": "DIEU",
+    "collaboration": "Internal",
+    "location": "BE, Brussels",
+    "type": "Residential",
+    "year": "2025"
+  }
+]

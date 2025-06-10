@@ -143,36 +143,11 @@
       /* margin-top: 0.5rem; */
     }
 
-    @media (max-width: 768px) {
-      .hdrLWF {
-        padding: 0.5rem;
-      }
-      .hdrLWF details,
-      .filters select {
-        font-size: 0.7rem;
-      }
-      .archive-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 13px;
-      }
-      .location,
-      .state {
+    @media (max-width: 720px) {
+      .archive-grid .collaboration,
+      .archive-grid .type,
+      .archive-grid .location {
         display: none;
-      }
-
-      .archive-grid > :first-child {
-        grid-column: span 3;
-      }
-
-      .project-content p {
-        grid-column: 1 / span 5;
-      }
-      .project-content img {
-        grid-column: span 6;
-        max-width: 100%;
-        height: auto;
-        scroll-margin-bottom: 0.5rem;
       }
     }
   </style>
@@ -187,114 +162,31 @@
       <button id="mode-toggle">[ mode ]</button>
     </div>
     <!-- NAV -->
-
     <section class="project-list grid-container">
       <div class="filters">
+        <select id="filter-collaboration">
+          <option value="all">All Collaborations</option>
+        </select>
+
+        <select id="filter-location">
+          <option value="all">All Locations</option>
+        </select>
+
         <select id="filter-type">
-          <option value="all">All Types</option>
-          <option value="architecture">Architecture</option>
-          <!-- Add more types if needed -->
+          <option value="all">All Categories</option>
         </select>
 
         <select id="filter-year">
           <option value="all">All Years</option>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <!-- Add more years -->
-        </select>
-
-        <select id="stateFilter">
-          <option value="">All States</option>
-          <option value="competition">Competition</option>
-          <option value="built">Built</option>
-          <option value="complete">Complete</option>
-          <!-- Add more states as needed -->
         </select>
       </div>
     </section>
 
-    <!-- ARCHIVE LIST V02 -->
-    <div class="hdrLWF">
-      <!-- XXX -->
-      <details
-        data-type="architecture"
-        data-year="2022"
-        data-state="complete"
-        class="project"
-      >
-        <summary class="sections archive-grid">
-          <div class="ar-title">Albergaria_casa do Outeiro</div>
-          <div class="type">Social Housing</div>
-          <div class="location">Porto, PT</div>
-          <div class="year">2025001</div>
-          <div class="state">complete</div>
-        </summary>
-        <div class="project-content">
-          <img src="images/001.jpg" alt="Armistice Project" />
-          <p>
-            Arquitetos: Services United <br />
-            Client: Anne Isabella <br />
-            Area: 1045m2<br />
-            Photography: Daniella Maiorano <br />
-          </p>
-        </div>
-      </details>
-      <!-- XXX -->
-      <details
-        data-type="architecture"
-        data-year="2024"
-        data-state="built"
-        class="project"
-      >
-        <summary class="sections archive-grid">
-          <div>MNAC</div>
-          <div class="type">Social Housing</div>
-          <div>Porto, PT</div>
-          <div class="year">24001</div>
-          <div class="state">Competition</div>
-        </summary>
-        <div class="project-content">
-          <p>
-            Arquitetos: Services United <br />
-            Client: Anne Isabella <br />
-            Area: 1045m2<br />
-            Photography: Daniella Maiorano <br />
-          </p>
-          <img src="images/001.jpg" alt="Armistice Project" />
-        </div>
-      </details>
-      <!-- XXX -->
-      <details
-        data-type="architecture"
-        data-year="2024"
-        data-state="Competition"
-        class="project"
-      >
-        <summary class="sections archive-grid">
-          <div>Albergaria_casa do Outeiro</div>
-          <div class="type">Social Housing</div>
-          <div>Porto, PT</div>
-          <div class="year">2025001</div>
-          <div class="state">Competition</div>
-        </summary>
-        <div class="project-content">
-          <p>
-            Arquitetos: Services United <br />
-            Client: Anne Isabella <br />
-            Area: 1045m2<br />
-            Photography: Daniella Maiorano <br />
-          </p>
-          <img src="images/001.jpg" alt="Armistice Project" />
-        </div>
-      </details>
-      <!-- XXX -->
+    <div class="hdrLWF"></div>
 
-      <!-- Add more <details> entries like this for other projects -->
-    </div>
-
-    <script src="script.js" defer></script>
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+    <!-- Add this if not already there -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </body>
 </html>

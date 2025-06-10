@@ -198,6 +198,7 @@ body.dark-mode button {
   text-transform: uppercase;
   cursor: none;
   color: black;
+  text-align: right;
 }
 
 body.dark-mode #mode-toggle {
@@ -229,12 +230,14 @@ a {
   cursor: none;
 }
 
+/* GRID TEMPLATE */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 20px;
   padding: 0 1rem;
 }
+/* END GRID TEMPLATE */
 
 .position {
   left: 0;
@@ -247,6 +250,8 @@ a {
   line-height: 1.2;
   z-index: 90;
 }
+
+/*  ------------------------------ */
 /*  ------------ NAV ------------ */
 .nav-container {
   position: fixed;
@@ -259,9 +264,11 @@ a {
   line-height: 1.2;
   z-index: 90;
 }
+.logo {
+  grid-column: span 9;
+}
 
 #logo-animation {
-  grid-column: span 8;
   align-self: center;
   width: 180px;
 }
@@ -273,22 +280,114 @@ a {
   transition: 0.3s ease;
   text-transform: uppercase;
   align-content: center;
+  text-align: right;
 }
 .nav-container a:hover {
   color: blue;
-  letter-spacing: 0.03rem;
+  text-indent: 10px;
 }
 
-/* #menu {
-  grid-column: 9 / -1; 
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+/* -Landing Page NAV - */
+#landing {
+  margin-top: 45vh;
+}
+
+.logoLanding {
+  grid-column: span 2;
+}
+
+.landingParagraph {
+  padding-top: 15px;
+  grid-column: span 7;
+}
+
+/* Hamburger button (toggle trigger) */
+#mobile-menu-toggle {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
   text-transform: uppercase;
-
+  cursor: none;
+  color: black;
+  text-align: right;
 }
-} */
+
+/* Fullscreen overlay menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #e6e6e5;
+  z-index: 1000;
+  display: none; /* Show it via JavaScript toggle */
+  font-family: San, sans-serif;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header: Logo + Close button */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-logo {
+  font-size: 0.9rem;
+}
+
+.menu-close {
+  background: none;
+  border: none;
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* Menu links */
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* Contact block at the bottom */
+.mobile-contact {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.mobile-contact strong {
+  margin-right: 10px;
+}
+
+.mobile-contact p {
+  margin: 0.3rem 0;
+}
+
+/* Responsive: Show menu toggle on small screens */
+@media (max-width: 768px) {
+  #mobile-menu-toggle {
+    display: block;
+    grid-column: 6;
+    justify-self: end;
+  }
+  .landingParagraph {
+    display: none;
+  }
+}
 
 /* ---------- END NAV ------------ */
+/*  ------------------------------ */
 
 /* ---------- PROJECTS ---------- */
 
@@ -367,6 +466,7 @@ h3 {
 }
 
 /* -------------------------- SLider */
+/* ---------- PROJECTS ---------- */
 
 .pr-image img {
   display: block;
@@ -419,20 +519,20 @@ h3 {
   }
 
   #logo-animation {
-    grid-column: span 2;
+    grid-column: span 4;
     align-self: center;
-    width: 150px;
-  }
-  #mode-toggle {
-    display: none;
+    width: 170px;
   }
 
   p,
   .tag-line,
   .title,
-  .nav-container a,
   #mode-toggle {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-container a {
+    display: none;
   }
 
   h5,

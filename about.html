@@ -8,6 +8,37 @@
   </head>
 
   <style>
+    /* ______________________AREA 51 */
+
+    body.dark-mode {
+      background-color: blue;
+      color: white;
+    }
+
+    body.dark-mode a,
+    body.dark-mode h1,
+    body.dark-mode p,
+    body.dark-mode button,
+    body.dark-mode strong {
+      color: white;
+    }
+
+    #mode-toggle {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      text-transform: uppercase;
+      cursor: none;
+      color: black;
+    }
+
+    body.dark-mode #mode-toggle {
+      color: white;
+    }
+
+    /* ______________________AREA 51 */
+
     .bio-entrance {
       padding-top: 13em;
       margin-bottom: -1.3em;
@@ -72,17 +103,60 @@
     <div class="custom-cursor"></div>
     <!-- NAV -->
     <div class="sections grid-container nav-container">
-      <div class="logo">
-        <a href="" style="text-decoration: none"
-          ><h1>AP <span style="font-family: Sf">Co.</span></h1></a
-        >
-      </div>
+      <div class="logo" id="logo-animation"></div>
       <a href="archive.html">Arquive</a>
       <a href="index.html">projects</a>
-      <a href="about.html">info</a>
+      <a href="about.html">studio</a>
       <button id="mode-toggle">[ mode ]</button>
     </div>
     <!-- NAV -->
+
+    <div class="grid-container studio">
+      <img
+        class="studio-picture"
+        src="images/office.png"
+        alt="studio picture"
+      />
+      <p class="services">
+        SERVICES<br /><br />
+        → Arquitecture<br />
+        → Design<br />
+        → Curation<br />
+      </p>
+    </div>
+    <div class="grid-container bio-text">
+      <p class="bio-text">
+        <strong>Albuquerque Pinho and Co</strong> is a collaborative
+        architecture and design studio founded in 2020 by Luís Albuquerque
+        Pinho. Based in Porto, the studio works across the fields of
+        architecture, object design, wellbeing, critical thinking, and
+        aesthetics, performing nationally and internationally. Its
+        multidisciplinary practice embraces design as a cultural and ethical act
+        — shaping not only the physical space, but also the relational spheres
+        and ecological landscapes.<br />
+
+        With a primary focus on housing, public cultural buildings and urban
+        planning, the studio’s work is guided by a strong ethos of generosity
+        and economy. Each project aspires to serve life and community, foster
+        use and appropriation, challenging the conventional norms through
+        precise yet open-ended design strategies, placing the principles of
+        sustainability at the core if its designs and philosophy. Through the
+        selection of materials, construction methods, and energy use, the
+        studio’s work reflects a commitment to architecture’s role in shaping
+        climate-conscious and regenerative futures.<br />
+
+        Beyond architectural practice, Albuquerque Pinho and Co embraces an
+        expanded practice, collaborating across disciplines and media, with
+        projects for exhibition displays for Galeria Vertical at Silo-Auto in
+        Porto (2016), a public installation for the 20th anniversary of Porto’s
+        as a UNESCO World Heritage Site (2016), and also collaborated with the
+        Portuguese artist Carla Filipe on a project for a garden installation
+        for the Ping Yao Sculpture Park in China (2019). These projects reflect
+        the studio’s commitment to cultural engagement and experimentation,
+        pushing architecture’s boundaries into art, public space, and collective
+        memory.<br /><br />
+      </p>
+    </div>
 
     <div class="grid-container bio-entrance">
       <img
@@ -125,71 +199,8 @@
         internationalisation of artistic practices. Since 2020, he leads his own
         practice, <strong>Albuquerque Pinho and Co</strong>, focusing on
         architecture and consulting, with an emphasis on sustainability and the
-        integration of traditional construction methods.
-      </p>
-    </div>
-    <div class="grid-container studio">
-      <img
-        class="studio-picture"
-        src="images/office.png"
-        alt="studio picture"
-      />
-      <p class="services">
-        SERVICES<br /><br />
-        → Arquitecture<br />
-        → Design<br />
-        → Curation<br />
-      </p>
-    </div>
-    <div class="grid-container bio-text">
-      <p class="bio-text">
-        <strong>Albuquerque Pinho and Co</strong> is a collaborative
-        architecture and design studio founded in 2020 by Luís Albuquerque
-        Pinho. Based in Porto, the studio works across the fields of
-        architecture, object design, wellbeing, critical thinking, and
-        aesthetics, performing nationally and internationally. Its
-        multidisciplinary practice embraces design as a cultural and ethical act
-        — shaping not only the physical space, but also the relational spheres
-        and ecological landscapes.<br />
-
-        With a primary focus on housing, public cultural buildings and urban
-        planning, the studio’s work is guided by a strong ethos of generosity
-        and economy. Each project aspires to serve life and community, foster
-        use and appropriation, challenging the conventional norms through
-        precise yet open-ended design strategies, placing the principles of
-        sustainability at the core if its designs and philosophy. Through the
-        selection of materials, construction methods, and energy use, the
-        studio’s work reflects a commitment to architecture’s role in shaping
-        climate-conscious and regenerative futures.<br />
-
-        Projects such as the renovation of office spaces for Porto City Hall,
-        private residencies, and a housing complex in Albergaria-a-Velha
-        illustrate the studio’s commitment to socially engaged and
-        environmentally responsible architecture. More recently, the practice
-        has focused on renovation and adaptive reuse of heritage houses –
-        including the Casa do Morgadio de Santo Antão das Presas and Casa do
-        Outeiro – highlighting a growing interest in preserving cultural memory
-        through contemporary design strategies. The preservation of cultural
-        heritage also reflects on the studio’s respect for traditional
-        construction methods and craft, reinterpreting vernacular techniques and
-        using local materials and labor, building for the future in dialogue
-        with the past.<br />
-
-        Besides architectural work, the studio offers consulting in construction
-        processes, notably for projects such as a residence in the Cologny in
-        Geneva and the Whitley Park Estate in London, providing technical and
-        conceptual guidance in international contexts.<br />
-
-        Beyond architectural practice, Albuquerque Pinho and Co embraces an
-        expanded practice, collaborating across disciplines and media, with
-        projects for exhibition displays for Galeria Vertical at Silo-Auto in
-        Porto (2016), a public installation for the 20th anniversary of Porto’s
-        as a UNESCO World Heritage Site (2016), and also collaborated with the
-        Portuguese artist Carla Filipe on a project for a garden installation
-        for the Ping Yao Sculpture Park in China (2019). These projects reflect
-        the studio’s commitment to cultural engagement and experimentation,
-        pushing architecture’s boundaries into art, public space, and collective
-        memory.<br /><br />
+        integration of traditional construction methods.<br />
+        <br />
         <strong
           >Albuquerque Pinho and Co continues to evolve as a critical and
           creative platform, committed to developing architectural practices
@@ -214,5 +225,6 @@
       <img class="marca" src="images/logo.svg" alt="logo" />
     </div>
     <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   </body>
 </html>
