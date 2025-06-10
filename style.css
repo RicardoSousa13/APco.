@@ -198,6 +198,7 @@ body.dark-mode button {
   text-transform: uppercase;
   cursor: none;
   color: black;
+  text-align: right;
 }
 
 body.dark-mode #mode-toggle {
@@ -247,6 +248,8 @@ a {
   line-height: 1.2;
   z-index: 90;
 }
+
+/*  ------------------------------ */
 /*  ------------ NAV ------------ */
 .nav-container {
   position: fixed;
@@ -259,9 +262,11 @@ a {
   line-height: 1.2;
   z-index: 90;
 }
+.logo {
+  grid-column: span 9;
+}
 
 #logo-animation {
-  grid-column: span 8;
   align-self: center;
   width: 180px;
 }
@@ -273,22 +278,29 @@ a {
   transition: 0.3s ease;
   text-transform: uppercase;
   align-content: center;
+  text-align: right;
 }
 .nav-container a:hover {
   color: blue;
-  letter-spacing: 0.03rem;
+  text-indent: 10px;
 }
 
-/* #menu {
-  grid-column: 9 / -1; 
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  text-transform: uppercase;
-
+/* -Landing Page NAV - */
+#landing {
+  margin-top: 45vh;
 }
-} */
+
+.logoLanding {
+  grid-column: span 2;
+}
+
+.landingParagraph {
+  padding-top: 15px;
+  grid-column: span 7;
+}
 
 /* ---------- END NAV ------------ */
+/*  ------------------------------ */
 
 /* ---------- PROJECTS ---------- */
 
