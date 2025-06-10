@@ -17,6 +17,18 @@ document.addEventListener("mousemove", (e) => {
   customCursor.style.top = `${e.clientY}px`;
 });
 
+// ----------- Hamburguer -----------
+
+document
+  .getElementById("mobile-menu-toggle")
+  .addEventListener("click", function () {
+    document.getElementById("mobile-menu").style.display = "flex";
+  });
+
+document.querySelector(".menu-close").addEventListener("click", function () {
+  document.getElementById("mobile-menu").style.display = "none";
+});
+
 // ----------- Dark Mode Toggle -----------
 const modeToggle = document.getElementById("mode-toggle");
 
